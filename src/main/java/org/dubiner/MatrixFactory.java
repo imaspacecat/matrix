@@ -1,2 +1,4 @@
-package org.dubiner;public class MatrixFactory {
+package org.dubiner;
+
+public class MatrixFactory {
 }

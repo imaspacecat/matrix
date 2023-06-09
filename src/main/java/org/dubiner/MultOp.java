@@ -1,12 +1,16 @@
 package org.dubiner;
 
-public class Mult {
+import java.util.Arrays;
+
+public class MultOp {
     private final double[] row;
     private final double[] col;
+    private final int i;
 
-    public Mult(double[] row, double[] col) {
+    public MultOp(double[] row, double[] col, int i) {
         this.row = row;
         this.col = col;
+        this.i = i;
     }
 
     public double[] getRow() {
@@ -19,11 +23,18 @@ public class Mult {
 
     public double calculate() {
         double sum = 0;
-        for (double i : row) {
-            for (double j : col) {
-                sum += i * j;
-            }
+        for (int i = 0; i < row.length; i++) {
+            sum += row[i] * col[i];
         }
         return sum;
+    }
+
+    @Override
+    public String toString() {
+        return "MultOp{" +
+                "row=" + Arrays.toString(row) +
+                ", col=" + Arrays.toString(col) +
+                ", i=" + i +
+                '}';
     }
 }
