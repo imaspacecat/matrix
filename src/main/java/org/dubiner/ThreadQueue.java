@@ -25,11 +25,13 @@ public class ThreadQueue {
         for (int i = 0; i < threads.length; i++) {
             threads[i] = new Thread(() -> {
                 while (!done) {
-                    MultOp multOp = input.poll();
-                    if (multOp != null) {
-//                        System.out.println("here");
-                        result.add(multOp.calculate());
+                    MultOp multOp;
+                    try {
+                        multOp = input.take();
+                    } catch (InterruptedException e) {
+                        throw new RuntimeException(e);
                     }
+                    result.add(multOp.calculate());
                 }
             }, "Thread " + i);
         }

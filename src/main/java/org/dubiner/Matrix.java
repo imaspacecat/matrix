@@ -69,7 +69,7 @@ public class Matrix {
         System.out.println("thread queue stopped");
 
 //        threadQueue.getResult().forEach(System.out::println);
-        System.out.println(threadQueue.getResult().size());
+//        System.out.println(threadQueue.getResult().size());
 //        System.out.println(test);
 //        test.forEach(a -> System.out.println(a.calculate()));
 
